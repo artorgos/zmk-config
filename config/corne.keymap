@@ -4,110 +4,112 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
-
-#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
-
-/ {
-    behaviors {
-        pht: positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <400>;
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <1>;    // <---[[the W key]]
-        };
-        bhm: balanced_homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-        };
-        mo_tog: behavior_mo_tog {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&tog>;
-        };
-        lt {
-            tapping-term-ms = <200>;
-        };
-    };
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | LEFT SHIFT & TAB |  A  |  O  |  E  |  U  |  I  |   |  D  |   H  |  T  |  N  |  S  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp ESC   &kp SQT &kp COMMA &kp DOT &kp P &kp Y   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
-   &pht LEFT_SHIFT TAB &kp A &kp O &kp E &kp U &kp I   &kp D &kp H  &kp T     &kp N   &kp S &kp RIGHT_SHIFT
-   &bhm LCTRL LGUI &kp SEMICOLON &kp Q &kp J &kp K &kp X   &kp B &kp M  &kp W &kp V &kp Z &kp MINUS
-                  &kp LALT &lt 1 DEL  &lt 4 SPACE   &kp SPACE &lt 2 ENTER    &kp RALT
-                        >;
-                };
- lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  *  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                bindings = <
-&kp ESC    &kp EXCL       &kp AT_SIGN       &kp HASH       &kp DOLLAR       &kp PERCENT         &kp KP_MULTIPLY   &kp N7   &kp N8 &kp N9    &kp MINUS &kp BSPC
-&pht LEFT_SHIFT TAB  &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp KP_DIVIDE  &kp N4  &kp N5  &kp N6  &kp KP_PLUS  &kp RIGHT_SHIFT
-&bhm LCTRL LGUI  &kp LBKT  &kp RBKT  &kp EQUAL  &kp SLASH  &kp BSLH  &trans  &kp N1  &kp N2  &kp N3  &kp KP_ENTER  &trans
-                                        &kp LALT  &trans  &kp SPACE  &kp SPACE  &mo 3  &kp N0
-                >;
-        };
+ #include <behaviors.dtsi>
+ #include <dt-bindings/zmk/keys.h>
+ #include <dt-bindings/zmk/bt.h>
+ #include <dt-bindings/zmk/rgb.h>
+ 
+ #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+ 
+ / {
+     behaviors {
+         pht: positional_hold_tap {
+             compatible = "zmk,behavior-hold-tap";
+             #binding-cells = <2>;
+             flavor = "hold-preferred";
+             tapping-term-ms = <400>;
+             quick-tap-ms = <200>;
+             bindings = <&kp>, <&kp>;
+             hold-trigger-key-positions = <1>;    // <---[[the W key]]
+         };
+         bhm: balanced_homerow_mods {
+             compatible = "zmk,behavior-hold-tap";
+             #binding-cells = <2>;
+             tapping-term-ms = <200>;    // <---[[moderate duration]]
+             quick-tap-ms = <0>;
+             flavor = "balanced";
+             bindings = <&kp>, <&kp>;
+         };
+         mo_tog: behavior_mo_tog {
+             compatible = "zmk,behavior-hold-tap";
+             #binding-cells = <2>;
+             flavor = "hold-preferred";
+             tapping-term-ms = <200>;
+             bindings = <&mo>, <&tog>;
+         };
+         lt {
+             tapping-term-ms = <200>;
+         };
+     };
+         keymap {
+                 compatible = "zmk,keymap";
+ 
+                 default_layer {
+ // -----------------------------------------------------------------------------------------
+ // |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+ // | LEFT SHIFT & TAB |  A  |  O  |  E  |  U  |  I  |   |  D  |   H  |  T  |  N  |  S  |  '   |
+ // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+ //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+                         bindings = <
+    &kp ESC   &kp SQT &kp COMMA &kp DOT &kp P &kp Y   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
+    &pht LEFT_SHIFT TAB &kp A &kp O &kp E &kp U &kp I   &kp D &kp H  &kp T     &kp N   &kp S &kp RIGHT_SHIFT
+    &bhm LCTRL LGUI &kp SEMICOLON &kp Q &kp J &kp K &kp X   &kp B &kp M  &kp W &kp V &kp Z &kp MINUS
+                   &kp LALT &lt 1 DEL  &lt 4 SPACE   &kp SPACE &lt 2 ENTER    &kp RALT
+                         >;
+                 };
+//CAPA MO 1
+                lower_layer {
+ // -----------------------------------------------------------------------------------------
+ // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  *  |  7  |  8  |  9  |  0  | BSPC |
+ // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+ // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+ //                    | GUI |     | SPC |   | ENT |     | ALT |
+                 bindings = <
+ &kp ESC    &kp EXCL       &kp AT_SIGN       &kp HASH       &kp DOLLAR       &kp PERCENT         &kp KP_MULTIPLY   &kp N7   &kp N8 &kp N9    &kp MINUS &kp BSPC
+ &pht LEFT_SHIFT TAB  &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp KP_DIVIDE  &kp N4  &kp N5  &kp N6  &kp KP_PLUS  &kp RIGHT_SHIFT
+ &bhm LCTRL LGUI  &kp LBKT  &kp RBKT  &kp EQUAL  &kp SLASH  &kp BSLH  &trans  &kp N1  &kp N2  &kp N3  &kp KP_ENTER  &trans
+                                         &kp LALT  &trans  &kp SPACE  &kp SPACE  &mo 3  &kp N0
+                 >;
+         };
+         //CAPA MO2
                 raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &rgb_ug RGB_TOG   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &mo 3   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
-                tuner_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &rgb_ug RGB_TOG   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
-                fn_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  F1  |  F2  |  F3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8 &kp F9    &kp F10 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans &trans &trans &kp F11 &kp F12 &trans
-   &trans  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LALT     &trans       &trans      &trans  &trans   &kp RALT
-                        >;
-                };
-        };
-};
+ // -----------------------------------------------------------------------------------------
+ // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
+ // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+ // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+ //                    | GUI |     | SPC |   | ENT |     | ALT |
+                         bindings = <
+&kp ESC  &kp TILDE &kp BSLH &kp EXCLAMATION &kp QUESTION &kp PIPE  &trans &kp HOME  &kp UP &kp END &trans &kp BSPC
+&kp LCTRL &rgb_ug RGB_TOG   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
+&kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
+                        &kp LGUI &mo 3   &kp SPACE   &kp RET   &trans    &kp RALT
+                         >;
+                 };
+                 tuner_layer {
+ // -----------------------------------------------------------------------------------------
+ // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
+ // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+ // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+ //                    | GUI |     | SPC |   | ENT |     | ALT |
+                         bindings = <
+    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
+    &kp LCTRL &rgb_ug RGB_TOG   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
+    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
+                              &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+                         >;
+                 };
+                 fn_layer {
+ // -----------------------------------------------------------------------------------------
+ // |  TAB |  F1  |  F2  |  F3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
+ // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+ // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+ //                    | GUI |     | SPC |   | ENT |     | ALT |
+                         bindings = <
+    &kp TAB    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8 &kp F9    &kp F10 &kp BSPC
+    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans &trans &trans &kp F11 &kp F12 &trans
+    &trans  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+                                     &kp LALT     &trans       &trans      &trans  &trans   &kp RALT
+                         >;
+                 };
+         };
+ };
