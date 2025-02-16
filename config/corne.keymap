@@ -37,7 +37,7 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
-        &lt {
+        lt {
             tapping-term-ms = <200>;
         };
     };
