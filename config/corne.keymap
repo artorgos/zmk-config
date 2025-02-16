@@ -79,9 +79,9 @@
  // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
  //                    | GUI |     | SPC |   | ENT |     | ALT |
                          bindings = <
-&kp ESC         &kp TILDE       &kp BSLH        &kp EXCLAMATION         &kp QUESTION    &kp PIPE  &trans &kp HOME  &kp UP &kp END &trans &kp BSPC
+&kp ESC &kp TILDE &kp BSLH &kp EXCLAMATION &kp QUESTION &kp PIPE  &trans &kp HOME  &kp UP &kp END &trans &kp BSPC
 &pht LEFT_SHIFT TAB &rgb_ug RGB_TOG   &trans &trans   &trans   &trans   &trans &kp LEFT &kp DOWN  &kp RIGHT &trans &kp RIGHT_SHIFT
-&bhm LCTRL LGU   &kp Z &kp X   &kp c   &kp V  &kp B &trans  &kp PSCRN  &trans   &trans    &trans     &trans
+&bhm LCTRL LGU   &kp Z &kp X   &kp C   &kp V  &kp B &trans  &kp PSCRN  &trans   &trans    &trans     &trans
 &kp LALT &mo 3   &lt 4 SPACE   &kp space   &trans    &kp RALT
                          >;
                  };
