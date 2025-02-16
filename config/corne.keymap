@@ -68,7 +68,7 @@
  &kp ESC    &kp EXCL       &kp AT_SIGN       &kp HASH       &kp DOLLAR       &kp PERCENT         &kp KP_MULTIPLY   &kp N7   &kp N8 &kp N9    &kp MINUS &kp BSPC
  &pht LEFT_SHIFT TAB  &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp KP_DIVIDE  &kp N4  &kp N5  &kp N6  &kp KP_PLUS  &kp RIGHT_SHIFT
  &bhm LCTRL LGUI  &kp LBKT  &kp RBKT  &kp EQUAL  &kp SLASH  &kp BSLH  &trans  &kp N1  &kp N2  &kp N3  &kp KP_ENTER  &trans
-                                         &kp LALT  &trans  &kp SPACE  &kp SPACE  &mo 3  &kp N0
+                                         &kp LALT  &trans  &lt 4 SPACE  &kp SPACE  &mo 3  &kp N0
                  >;
          };
          //CAPA MO2
@@ -79,10 +79,10 @@
  // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
  //                    | GUI |     | SPC |   | ENT |     | ALT |
                          bindings = <
-&kp ESC  &kp TILDE &kp BSLH &kp EXCLAMATION &kp QUESTION &kp PIPE  &trans &kp HOME  &kp UP &kp END &trans &kp BSPC
-&kp LCTRL &rgb_ug RGB_TOG   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-&kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                        &kp LGUI &mo 3   &kp SPACE   &kp RET   &trans    &kp RALT
+&kp ESC         &kp TILDE       &kp BSLH        &kp EXCLAMATION         &kp QUESTION    &kp PIPE  &trans &kp HOME  &kp UP &kp END &trans &kp BSPC
+&pht LEFT_SHIFT TAB &rgb_ug RGB_TOG   &trans &trans   &trans   &trans   &trans &kp LEFT &kp DOWN  &kp RIGHT &trans &kp RIGHT_SHIFT
+&bhm LCTRL LGU   &kp Z &kp X   &kp c   &kp V  &kp B &trans  &kp PSCRN  &trans   &trans    &trans     &trans
+&kp LALT &mo 3   &lt 4 SPACE   &kp space   &trans    &kp RALT
                          >;
                  };
                  tuner_layer {
