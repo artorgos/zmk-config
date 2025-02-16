@@ -18,14 +18,14 @@
              #binding-cells = <2>;
              flavor = "hold-preferred";
              tapping-term-ms = <400>;
-             quick-tap-ms = <200>;
+             quick-tap-ms = <100>;
              bindings = <&kp>, <&kp>;
              hold-trigger-key-positions = <1>;    // <---[[the W key]]
          };
          bhm: balanced_homerow_mods {
              compatible = "zmk,behavior-hold-tap";
              #binding-cells = <2>;
-             tapping-term-ms = <200>;    // <---[[moderate duration]]
+             tapping-term-ms = <100>;    // <---[[moderate duration]]
              quick-tap-ms = <0>;
              flavor = "balanced";
              bindings = <&kp>, <&kp>;
@@ -34,11 +34,11 @@
              compatible = "zmk,behavior-hold-tap";
              #binding-cells = <2>;
              flavor = "hold-preferred";
-             tapping-term-ms = <200>;
+             tapping-term-ms = <100>;
              bindings = <&mo>, <&tog>;
          };
          lt {
-             tapping-term-ms = <200>;
+             tapping-term-ms = <100>;
          };
      };
          keymap {
@@ -80,7 +80,7 @@
 &kp LALT &lt 3 DEL   &lt 4 SPACE   &kp SPACE   &trans    &kp RALT
                          >;
                  };
-        // CAPA MO3
+            // CAPA MO3
                  tuner_layer {
                          bindings = <
 &trans &trans  &trans  &trans  &trans  &trans            &trans  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans  &trans
@@ -99,7 +99,7 @@
                          bindings = <
     &kp TAB    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8 &kp F9    &kp F10 &kp BSPC
     &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans &trans &trans &kp F11 &kp F12 &trans
-    &trans  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+    &rgb_ug RGB_ON  &rgb_ug RGB_OFF       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
                                      &kp LALT     &trans       &trans      &trans  &trans   &kp RALT
                          >;
                  };
