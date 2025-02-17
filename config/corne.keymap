@@ -47,7 +47,7 @@
             tapping-term-ms = <200>;
             bindings = <&kp RIGHT_SHIFT>, <&kp CAPSLOCK>;
         };
-        td_comilla: tap_dance_mod_tap {
+        td_comilla: tap_dance_mod_comilla {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
