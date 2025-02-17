@@ -18,15 +18,15 @@
              compatible = "zmk,behavior-hold-tap";
              #binding-cells = <2>;
              flavor = "hold-preferred";
-             tapping-term-ms = <400>;
-             quick-tap-ms = <150>;
+             tapping-term-ms = <50>;
+             quick-tap-ms = <50>;
              bindings = <&kp>, <&kp>;
              hold-trigger-key-positions = <1>;    // <---[[the W key]]
          };
          bhm: balanced_homerow_mods {
              compatible = "zmk,behavior-hold-tap";
              #binding-cells = <2>;
-             tapping-term-ms = <150>;    // <---[[moderate duration]]
+             tapping-term-ms = <50>;    // <---[[moderate duration]]
              quick-tap-ms = <0>;
              flavor = "balanced";
              bindings = <&kp>, <&kp>;
@@ -35,7 +35,7 @@
              compatible = "zmk,behavior-hold-tap";
              #binding-cells = <2>;
              flavor = "hold-preferred";
-             tapping-term-ms = <150>;
+             tapping-term-ms = <50>;
              bindings = <&mo>, <&tog>;
          };
          lt {
