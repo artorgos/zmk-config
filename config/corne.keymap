@@ -75,7 +75,7 @@
  // -----------------------------------------------------------------------------------------
  // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  *  |  7  |  8  |  9  |  0  | BSPC |
  // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
- // | SHFT |     |     |     |     |     |   |     |     |     |     |     |         |
+ // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
  //                    | GUI |     | SPC |   | ENT |     | ALT |
                  bindings = <
  &kp ESC    &kp EXCL       &kp AT_SIGN       &kp HASH       &kp DOLLAR       &kp PERCENT         &kp KP_MULTIPLY   &kp N7   &kp N8 &kp N9    &kp MINUS &kp BSPC
